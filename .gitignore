@@ -1,0 +1,53 @@
+# created by virtualenv automatically
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+*.env
+*.env.*
+
+# Django specific
+*.log
+*.pot
+db.sqlite3   # SQLite database (if you're using this in development)
+media/       # User uploaded files
+staticfiles/ # Collected static files
+
+# Secrets
+.env
+*.secret
+*.key
+secrets.json
+
+# VS Code / IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Migrations (optional — depends on if you want to track them)
+**/migrations/*.pyc
+**/migrations/__pycache__/
+# Uncomment if you do NOT want to include migrations:
+# **/migrations/
+
+# Node modules (if using npm/yarn for front-end)
+node_modules/
+
+# Build files
+*.bak
+*.swp
+*.tmp
+
