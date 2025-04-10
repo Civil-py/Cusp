@@ -119,9 +119,12 @@ USE_TZ = True
 import os
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "cusp/static"),
+    BASE_DIR / 'cusp/static',  # Adjust this path as needed
 ]
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
