@@ -121,8 +121,9 @@ import os
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'cusp/static',  # Adjust this path as needed
+    BASE_DIR / 'Main/static',
 ]
+
 
 
 
