@@ -1,0 +1,87 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="​​VISION &amp;amp; MISS​ION​">
+    <meta name="description" content="">
+    <title>Cusp Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'index.css' %} " media="screen">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <script class="u-script" type="text/javascript" src="{% static 'jquery-1.9.1.min.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 7.5.3, nicepage.com">
+
+
+
+
+
+
+
+
+
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"url": "/",
+		"logo": "images/Cusp.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="/">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+<body>
+
+ {% for m in messages %}
+  {{ m }}
+  {% endfor %}
+
+
+<section class="u-clearfix u-image u-parallax u-section-6" id="block-6" data-image-width="1280" data-image-height="853">
+    <h1></h1>
+
+      <h1 class="u-text u-text-body-alt-color u-text-default u-text-1">Get Quote</h1>
+      <div class="u-container-style u-gradient u-group u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+            <form action="{% url 'quote' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="{{ form.Name.id_for_label }}" style="color: white;">Name</label>
+        {{ form.Name }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.Service.id_for_label }}" style="color: white;">Service Requested</label>
+        {{ form.Service }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.Email.id_for_label }}" style="color: white;">Email</label>
+        {{ form.Email }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.Site_Address.id_for_label }}" style="color: white;">Site Address</label>
+        {{ form.Site_Address }}
+    </div>
+<p></p>
+    <button type="submit" class="btn btn-outline-secondary btn-sm-outline">Send</button>
+</form>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+{% include "cusp/footer.html" %}
+
+</body>
