@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Card</title>
+    <style>
+        .popup-card {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 10rem;
+            background: transparent;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            display: block;
+            z-index: 1000;
+            color: white;
+            cursor: move;
+
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="popupCard" class="popup-card">
+    <button class="close-btn" onclick="closePopup()">✖</button>
+    <div class="card-body">
+        <a href="{% url 'quote' %}">
+            <h5 style="color: white" class="card-title">Get Quote</h5>
+            <p></p>
+        </a>
+    </div>
+</div>
+
+<script>
+    function closePopup() {
+        document.getElementById('popupCard').style.display = 'none';
+    }
+
+    // Dragging functionality
+    const popup = document.getElementById('popupCard');
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    popup.addEventListener('mousedown', function (e) {
+        isDragging = true;
+        offsetX = e.clientX - popup.offsetLeft;
+        offsetY = e.clientY - popup.offsetTop;
+    });
+
+    document.addEventListener('mousemove', function (e) {
+        if (isDragging) {
+            popup.style.left = (e.clientX - offsetX) + 'px';
+            popup.style.top = (e.clientY - offsetY) + 'px';
+        }
+    });
+
+    document.addEventListener('mouseup', function () {
+        isDragging = false;
+    });
+</script>
+
+</body>
+</html>
