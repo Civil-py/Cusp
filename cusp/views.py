@@ -21,7 +21,7 @@ def quote(request):
             return redirect('index')
         else:
             print("Form Errors:", form.errors)  # Print form validation errors
-            messages.error(request, "Form is invalid. Please check your inputs.")
+            messages.error(request, "Invalid Email. Please check your Email.")
 
     else:
         form = QuoteForm(initial={'created_date': datetime.now()})
@@ -46,10 +46,11 @@ def send_email(form_data):
     my_email = "mothalindokuhle168@gmail.com"
     my_password = "ebjmkthbnjphixwk"  # Use your App Password
 
-    friend_email = "civilmotha@gmail.com"
+    friend_email = "info@cuspfc.co.za"
     name = form_data['Name']
     email = form_data['Email']
     service = form_data['Service']
+    type_of_property = form_data['type_of_property']
     site_address = form_data['Site_Address']
 
     context = ssl.create_default_context()
@@ -60,6 +61,7 @@ def send_email(form_data):
             to_addrs=friend_email,
             msg=f"Subject: New Quote Request\n\n"
                 f"Service: {service}\n"
+                f"Type Of Property: {type_of_property}\n"
                 f"From: {name}\n"
                 f"Email: {email}\n"
                 f"Site Address: {site_address}"
