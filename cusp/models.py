@@ -28,6 +28,7 @@ class Quote(models.Model):
     type_of_property = models.CharField(max_length=64, null=True, choices=PROPERTIES)
     Name = models.CharField(max_length=64, primary_key=True)
     Email = models.EmailField(null=True)
+    cell = models.IntegerField(null=True,)
     Site_Address = models.CharField(max_length=64)
 
     #utility Fields
