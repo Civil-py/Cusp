@@ -16,6 +16,7 @@ class QuoteForm(ModelForm):
         widgets = {
             'Name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please fill this in'}),
             'Service': forms.Select(attrs={'class': 'form-control'}),
+            'type_of_property': forms.Select(attrs={'class': 'form-control'}),
             'Email': forms.TextInput(attrs={'class': 'form-control', }),
             'Site_Address': forms.TextInput(attrs={'class': 'form-control', }),
             'created_date': forms.HiddenInput(),
