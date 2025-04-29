@@ -25,12 +25,12 @@ SECRET_KEY = 'django-insecure-5r6_0b(d=i_#_sgow0ahx^#m)v^fjz9mxe1%50sa+e90ufe!)3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cusp.onrender.com']
+ALLOWED_HOSTS = ['cusp.onrender.com', 'www.cuspfc.co.za']
 
 
 # Application definition
 
-INSTALLED_APPS = ['www.cuspfc.co.za',
+INSTALLED_APPS = [
     'cusp',
     'django.contrib.admin',
     'django.contrib.auth',
