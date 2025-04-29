@@ -19,6 +19,7 @@ class QuoteForm(ModelForm):
             'type_of_property': forms.Select(attrs={'class': 'form-control'}),
             'Email': forms.TextInput(attrs={'class': 'form-control', }),
             'Site_Address': forms.TextInput(attrs={'class': 'form-control', }),
+            'cell': forms.TextInput(attrs={'class': 'form-control', }),
             'created_date': forms.HiddenInput(),
             'last_updated': forms.HiddenInput(),
         }
