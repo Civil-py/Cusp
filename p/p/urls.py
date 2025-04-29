@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cusp/', include('cusp.urls'))
+    path('', include('cusp.urls')),
 ]
 
 from django.conf import settings
