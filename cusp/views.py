@@ -21,7 +21,7 @@ def quote(request):
             return redirect('index')
         else:
             print("Form Errors:", form.errors)  # Print form validation errors
-            messages.error(request, "Invalid Email. Please check your Email.")
+            messages.error(request, "Invalid Email or Cell. Please check your Email/Cell.")
 
     else:
         form = QuoteForm(initial={'created_date': datetime.now()})
@@ -51,6 +51,7 @@ def send_email(form_data):
     email = form_data['Email']
     service = form_data['Service']
     type_of_property = form_data['type_of_property']
+    cell = form_data['cell']
     site_address = form_data['Site_Address']
 
     context = ssl.create_default_context()
@@ -64,6 +65,7 @@ def send_email(form_data):
                 f"Type Of Property: {type_of_property}\n"
                 f"From: {name}\n"
                 f"Email: {email}\n"
+                f"Cell: {cell}\n"
                 f"Site Address: {site_address}"
         )
     print("Email sent successfully!")
