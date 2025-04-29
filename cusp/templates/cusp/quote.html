@@ -64,6 +64,11 @@
         {{ form.Service }}
     </div>
 
+     <div class="form-group">
+        <label for="{{ form.Service.id_for_label }}" style="color: white;">Type Of Property</label>
+        {{ form.type_of_property }}
+    </div>
+
     <div class="form-group">
         <label for="{{ form.Email.id_for_label }}" style="color: white;">Email</label>
         {{ form.Email }}
