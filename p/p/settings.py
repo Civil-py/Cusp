@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['cusp.onrender.com']
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = ['www.cuspfc.co.za',
     'cusp',
     'django.contrib.admin',
     'django.contrib.auth',
